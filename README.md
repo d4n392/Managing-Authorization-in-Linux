@@ -2,8 +2,6 @@
 
 ## File permissions in Linux
 
-### Project description
-
 In this lab I managed the permissions of files within the _/home/researcher2/projects_ directory, which is owned by me, the _researcher2_ user and the _research_team_ group. The goal was to ensure that the active permissions reflected the appropriate level of authorization. Using the principle of least privilege, I restricted access where necessary.
 
 ### Check file and directory details
@@ -43,14 +41,38 @@ Beneath the previous output of file permissions, the first two lines display the
 
 Permissions can also be represented numerically:
 **r = 4**, **w = 2**, and **x = 1**.
+
 These numbers are added together to form the permission sets. For example:
+
 **rwx** = 4 + 2 + 1 = 7
 **r-x** = 4 + 0 + 1 = 5
 **r--** = 4 + 0 + 0 = 4
+
 So, the string **rwxr-xr--** can also be represented as **754**.
 In the screenshot below I used this alternative numerical argument to remove the read permissions from group for the _project_m.txt_ file:
 
+![image](https://github.com/user-attachments/assets/b6d69a8b-0192-4059-9c20-4bc9a728945a)
 
+The company determined they did not want the group to have read permissions for the _project_m.txt_ file. To comply with this request I input the command **chmod** with the first argument **600** indicating I want to keep read(**4**) and write(**2**) permissions for user, remove read permissions for group, and leave the other permissions set to none(**0**). With the second argument identifying the file I want to manage permissions on, in this case **_project_m.txt_**. I then used **ls -la** to review the changes I made.
+
+### Change file permissions on a hidden file
+
+The research team at the company recently archived _.project_x.txt_. They do not want anyone to have write permissions for this project, however they would like for both the user and group to have read access. The code below is how I changed the permissions using the CLI in Linux:
+
+![image](https://github.com/user-attachments/assets/d1013031-b68f-4de9-9bfc-e1bcfb59abb8)
+
+Beneath the previous output of file permissions, the first two lines of the screenshot display the commands I entered, and the other lines display the output of the second command. I know _.project_x.txt_ is a hidden file because it starts with a period(**.**). In this example, using the **chmod** command with the first argument **440**, I gave only read permissions to the user and group, while removing write permissions from both. Leaving others with no permissions, indicated by the **0**. 
+
+### Change directory permissions
+
+My company only wants the _researcher2_ user to have access to the _drafts_ directory and its contents. This means that no one other than _researcher2_ should have execute permissions. The following code demonstrates how I used Linux commands to update the permissions:
+
+![image](https://github.com/user-attachments/assets/d4f3938a-5ed0-4cc2-9d62-18394ee917ea)
+
+Beneath the previous output of file permissions, the first two lines of the screenshot display the bash shell commands I entered, and the other lines display the output of the second command (**ls -la**). Looking in the first column I see that the permission settings for the directory _drafts_ is **drwx--x---**. To remove the execute permissions from the group I input the **chmod** command with the **g-x** argument, and then specified the _drafts_ directory by typing **drafts** as my second argument. Since the _researcher2_ user already had execute permissions, no further changes were needed.
+
+## Summary
+Using Linux Bash shell commands I was able to manage the authorization settings for the company. Effectively using least privilege in alignment with the company’s security goals, I navigated to the appropriate _projects_ directory, examined the current file and directory permissions, changed permissions on files, including hidden files, and changed permissions on directories. 
 
 
 
