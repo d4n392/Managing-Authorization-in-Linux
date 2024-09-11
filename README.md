@@ -4,6 +4,20 @@
 
 In this lab I managed the permissions of files within the _/home/researcher2/projects_ directory, which is owned by me, the _researcher2_ user and the _research_team_ group. The goal was to ensure that the active permissions reflected the appropriate level of authorization. Using the principle of least privilege, I restricted access where necessary.
 
+## Skills Learned:
+
+- Managing file and directory permissions in Linux
+- Understanding and applying the principle of least privilege
+- Reading and interpreting Linux file permission strings
+- Modifying file and directory permissions using both symbolic and numeric notation
+- Navigating hidden files and adjusting their permissions
+- Implementing security policies through access control modifications
+
+## Tools Used:
+
+- Linux commands: _**ls -la, chmod**_
+- Linux Bash shell for navigating directories and managing authorization
+
 ### Check file and directory details
 
 The following code demonstrates how I used Linux commands to check the existing permissions set for the projects directory.
