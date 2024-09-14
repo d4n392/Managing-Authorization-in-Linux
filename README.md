@@ -18,7 +18,7 @@ In this lab I managed the permissions of files within the _/home/researcher2/pro
 - Linux commands: _**ls -la, chmod**_
 - Linux Bash shell for navigating directories and managing authorization
 
-### Check file and directory details
+### Checking file and directory details
 
 The following code demonstrates how I used Linux commands to check the existing permissions set for the projects directory.
 
@@ -45,7 +45,7 @@ A directory having full permissions for all owner types would be **drwxrwxrwx**:
 
 For example, the file permissions for _project_r.txt_ are **-rw-rw-r--**. The first character is a hyphen(**-**), this indicates _project_r.txt_ is a file, not a directory. The second through fourth characters indicate the user has read and write, but not execute permissions. The fifth through seventh characters indicate the group has read and write, but not execute permissions. Finally the eighth through tenth characters indicate only read permissions for others. 
 
-### Change file permissions
+### Changing file permissions
 
 The company decided that others should not have write access to any of their files. To comply, I reviewed the previous output of file permissions (**ls -la**) in the projects directory and determined that _project_k.txt_ needed the write access removed for others. The screenshot below shows the Linux commands I used to achieve this: 
 
@@ -69,7 +69,7 @@ In the screenshot below I used this alternative numerical argument to remove the
 
 The company determined they did not want the group to have read permissions for the _project_m.txt_ file. To comply with this request I input the command **chmod** with the first argument **600** indicating I want to keep read(**4**) and write(**2**) permissions for user, remove read permissions for group, and leave the other permissions set to none(**0**). With the second argument identifying the file I want to manage permissions on, in this case **_project_m.txt_**. I then used **ls -la** to review the changes I made.
 
-### Change file permissions on a hidden file
+### Changing file permissions on a hidden file
 
 The research team at the company recently archived _.project_x.txt_. They do not want anyone to have write permissions for this project, however they would like for both the user and group to have read access. The code below is how I changed the permissions using the CLI in Linux:
 
@@ -77,7 +77,7 @@ The research team at the company recently archived _.project_x.txt_. They do not
 
 Beneath the previous output of file permissions, the first two lines of the screenshot display the commands I entered, and the other lines display the output of the second command. I know _.project_x.txt_ is a hidden file because it starts with a period(**.**). In this example, using the **chmod** command with the first argument **440**, I gave only read permissions to the user and group, while removing write permissions from both. Leaving others with no permissions, indicated by the **0**. 
 
-### Change directory permissions
+### Changing directory permissions
 
 My company only wants the _researcher2_ user to have access to the _drafts_ directory and its contents. This means that no one other than _researcher2_ should have execute permissions. The following code demonstrates how I used Linux commands to update the permissions:
 
