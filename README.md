@@ -1,6 +1,4 @@
-# Managing-Authorization-in-Linux
-
-## File permissions in Linux
+# Managing File Permissions
 
 In this lab I managed the permissions of files within the _/home/researcher2/projects_ directory, which is owned by me, the _researcher2_ user and the _research_team_ group. The goal was to ensure that the active permissions reflected the appropriate level of authorization. Using the principle of least privilege, I restricted access where necessary.
 
